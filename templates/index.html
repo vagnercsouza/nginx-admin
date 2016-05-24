@@ -1,9 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Nginx Admin</title>
-</head>
-<body>
+{% extends "layout.html" %}
+{% block body %}
 	<h1>Nginx Admin</h1>
 	<a href="{{ url_for('nginx_config') }}">Edit Nginx Config</a><br>
 	<a href="{{ url_for('create_site') }}">Create Site</a><br>
@@ -30,5 +26,4 @@
 			<tr align="center"><td colspan="3">You don't have any site configured.</td></tr>
 		{% endfor %}
 	</table>
-</body>
-</html>
+{% endblock %}
