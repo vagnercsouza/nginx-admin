@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nginx Admin</title>
+</head>
+<body>
+	<h1>Nginx Admin</h1>
+	<a href="{{ url_for('nginx_config') }}">Edit Nginx Config</a><br>
+	<a href="{{ url_for('create_site') }}">Create Site</a><br>
+	<a href="{{ url_for('start_nginx') }}">Start Nginx</a><br>
+	<a href="{{ url_for('stop_nginx') }}">Stop Nginx</a><br>
+	<a href="{{ url_for('reload_nginx') }}">Reload Nginx</a><br>
+	<a href="{{ url_for('test_nginx') }}">Test Nginx Config</a><br>
+	<br>
+	<h2>Sites</h2>
+	<table>
+		<tr>
+		    <th>File</th>
+		    <th>Actions</th>
+		</tr>
+		{% for file in sites %}
+		<tr>
+		    <td>{{ file.file }}</td>
+		    <td>
+		    	<a href="">Edit</a>
+		    	<a href="">Delete</a>
+		    </td>
+		</tr>
+		{% else %}
+			<tr align="center"><td colspan="3">You don't have any site configured.</td></tr>
+		{% endfor %}
+	</table>
+</body>
+</html>
