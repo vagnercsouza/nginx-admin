@@ -1,0 +1,8 @@
+{% extends "layout.html" %}
+{% block body %}
+	<h1>Create site</h1>
+	<form action="{{ url_for('save_site') }}" method="post">
+		<input type="text" name="name" placeholder="Domain name (mydomain.com)" /><br>
+		<button type="submit">Create</button>
+	</form>
+{% endblock %}
